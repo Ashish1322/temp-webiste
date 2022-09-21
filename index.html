@@ -1,0 +1,119 @@
+
+        <html>
+          <body><!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Calculator</title>
+    <style>
+        .outer {
+            width: fit-content;
+            margin: 50% auto;
+        }
+        .btn {
+            font-size: 40px;
+            width: 70px;
+            height: 70px;
+            margin: 10px;
+            box-shadow: 1px 2px grey;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 0, 0.52);
+            
+        }
+        #ans {
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 10px;
+            height: 30px;
+        }
+        .del{
+            width: 165px;
+            background-color: rgba(255, 0, 0, 0.315);
+        }
+        #ansbtn{
+            background-color: rgba(0, 128, 0, 0.445);
+        }
+    </style>
+</head>
+<body>
+    
+<div class="outer">
+
+    <h1 id="ans"></h1>
+    <div class="row">
+        <button onclick="writeNumber(7)" class="btn">7</button>
+        <button onclick="writeNumber(8)" class="btn">8</button>
+        <button onclick="writeNumber(9)" class="btn">9</button>
+        <button onclick="writeNumber('/')" class="btn">/</button>
+    </div>
+    <div class="row">
+        <button onclick="writeNumber(4)" class="btn">4</button>
+        <button onclick="writeNumber(5)"  class="btn">5</button>
+        <button onclick="writeNumber(6)" class="btn">6</button>
+        <button onclick="writeNumber('*')" class="btn">X</button>
+    </div>
+
+    <div class="row">
+        <button onclick="writeNumber(1)"  class="btn">1</button>
+        <button onclick="writeNumber(2)"  class="btn">2</button>
+        <button onclick="writeNumber(3)"  class="btn">3</button>
+        <button onclick="writeNumber('-')"  class="btn">-</button>
+    </div>
+    <div class="row">
+        <button onclick="writeNumber(0)"  class="btn">0</button>
+        <button onclick="writeNumber('.')"  class="btn">.</button>
+        <button onclick="writeNumber('+')"  class="btn">+</button>
+        <button id="ansbtn" onclick="writeAnswer()"  class="btn">=</button>
+    </div>
+    <div class="row">
+        <button onclick="del()" class="btn del">Del</button>
+        <button onclick="ourClear()" class="btn del">Clear</button>
+    </div>  
+</div>
+
+<script>
+    function writeNumber(number)
+    {
+       var initial =  document.getElementById('ans').innerText
+
+       document.getElementById("ans").innerText = initial+number
+    }
+
+    function writeAnswer()
+    {
+        var expression = document.getElementById('ans').innerText
+
+        if(expression==" " || expression=="")
+        {
+            alert("Please Enter correct Values.")
+            return
+        }
+
+        var ans =  eval(expression)
+        document.getElementById('ans').innerText = ans
+
+
+    }
+
+    function del()
+    {
+        var a = document.getElementById('ans').innerText;
+        var newAns = a.slice(0, a.length-1)
+        document.getElementById('ans').innerText = newAns
+    }
+
+    function ourClear()
+    {
+       
+        document.getElementById('ans').innerText = ""
+    }
+</script>
+
+</body>
+</html></body>
+          <style>svg {
+    background-color: lightblue;
+}</style>
+          <script></script>
+        </html>
+      
